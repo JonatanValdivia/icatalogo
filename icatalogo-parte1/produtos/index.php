@@ -1,5 +1,5 @@
 <?php
-    session_start();
+     session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,10 +17,25 @@
     include "../componentes/header/header.php";
     ?>
     <div class="content">
+    <div style="position: absolute; top: 0; right: 0;">
+        <?php
+            if(isset($_SESSION['erros'])){
+                echo $_SESSION['erros'][0];
+            }
+
+            if(isset($_SESSION['mensagem'])){
+                echo $_SESSION['mensagem'];
+            }
+
+            unset($_SESSION['erros']);
+            unset($_SESSION['mensagem']);
+        ?>
+    </div>
         <section class="produtos-container">
         <?php
             //Autorização:
-            if(isset($_SESSION['logged'])){
+            //if(isset($_SESSION['logged'])){
+            if(isset($_SESSION["usuarioId"])){
             //Se o usuário estiver logado, mostrar os botôes Novo produto e adicionar categoria
             //Se estiver correto, salvar no session o id e o nome do usuario cadastrado
         ?>
@@ -30,7 +45,7 @@
             </header>
         <?php
             }
-            unset($_SESSION["logged"]);
+            //unset($_SESSION["logged"]);
         ?>
             <main>
                 <article class="card-produto">
