@@ -1,5 +1,6 @@
 <?php
   include ("../../database/conexao.php");
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,6 +22,25 @@
       <main>
         <form method="POST" class="form-produto" action="icatalogoActions.php">
           <h1>Cadastro de produto</h1>
+          <ul>
+          <?php
+          //Se tiver erros na função, então faça:
+            if(isset($_SESSION["erros"])){
+              //Percorrer todas as Strings que estão dentro de erros
+              foreach($_SESSION["erros"] as $erros){    
+          ?>
+          <!--  para cada erro, haverá uma <li> -->
+                <li><?= $erros ?></li>
+          <?php
+               
+              }
+              //Eliminação do(s) erro(s) que permanece(m) na tela:
+              unset($_SESSION["erros"]);
+            }
+
+          ?>
+
+        </ul>
           <div class="input-group span2">
             <input type="hidden" name="acao" value="inserir"/>
             <label for="descricao">Descrição</label>

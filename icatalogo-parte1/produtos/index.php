@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -10,15 +13,25 @@
 </head>
 
 <body>
-    <header>
-        <input type="search" placeholder="Pesquisar" />
-    </header>
+    <?php
+    include "../componentes/header/header.php";
+    ?>
     <div class="content">
         <section class="produtos-container">
+        <?php
+            //Autorização:
+            if(isset($_SESSION['logged'])){
+            //Se o usuário estiver logado, mostrar os botôes Novo produto e adicionar categoria
+            //Se estiver correto, salvar no session o id e o nome do usuario cadastrado
+        ?>
             <header>
-                <button onclick="javascript:window.location.href ='./novo/'">Novo Produto</button>
-                <button>Adicionar Categoria</button>
+                    <button onclick="javascript:window.location.href ='./novo/'">Novo Produto</button>
+                    <button>Adicionar Categoria</button>
             </header>
+        <?php
+            }
+            unset($_SESSION["logged"]);
+        ?>
             <main>
                 <article class="card-produto">
                     <figure>
