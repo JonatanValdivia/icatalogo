@@ -1,4 +1,4 @@
-<link href="/Jonatan/icatalogo/icatalogo-parte1/componentes/header/header.css" rel="stylesheet" />
+<link href="/PWBE/Aula10PHP/icatalogo/icatalogo-parte1/componentes/header/header.css" rel="stylesheet" />
 <header class="header">
     <figure>
         <img src="../imgs/logo.png" />
@@ -14,7 +14,7 @@
         </nav>
         <div id="container-login" class="container-login">
             <h1>Fazer Login</h1>
-            <form method="POST" action="/Jonatan/icatalogo/icatalogo-parte1/componentes/header/acoesLogin.php"">
+            <form method="POST" action="/PWBE/Aula10PHP/icatalogo/icatalogo-parte1/componentes/header/acoesLogin.php">
                 <input type="hidden" name="acao" value="login" />
                 <input type="text" name="usuario" placeholder="Usuário" />
                 <input type="password" name="senha" placeholder="Senha" />
@@ -29,7 +29,7 @@
                 <a id="menu-admin" onclick="logout()">Sair</a>
             </ul>
         </nav>
-        <form id="form-logout" style="display:none" method="POST" action="/Jonatan/icatalogo/icatalogo-parte1/componentes/header/acoesLogin.php"">
+        <form id="form-logout" style="display:none" method="POST" action="/PWBE/Aula10PHP/icatalogo/icatalogo-parte1/componentes/header/acoesLogin.php">
             <input type="hidden" name="acao" value="logout" />
         </form>
     <?php

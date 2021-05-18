@@ -11,6 +11,8 @@ function validarCampos(){
     if(!isset($_POST['senha']) && $_POST['senha'] == ""){
         $erros = "O campo senha é obrigatório!";
     }
+
+    return $erros;
 }
 
 switch ($_POST["acao"]) {

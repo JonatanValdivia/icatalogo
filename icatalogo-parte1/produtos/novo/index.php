@@ -1,6 +1,10 @@
 <?php
   include ("../../database/conexao.php");
   session_start();
+  if(isset($_SESSION["usuarioId"])){
+    $_SESSION["mensagem"] = "Vocêprecisa fazer login para acessar essa página";
+    header('location: ../index.php');
+  }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
