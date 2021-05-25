@@ -21,7 +21,7 @@
   border-radius: 50%;
 }
 
-.header > figure > img {
+.header > figure > a > img {
   margin: 5px 0px 0px 5px;
   width: 50px;
 }
@@ -81,4 +81,15 @@
 .container-login > h1 {
   color: var(--textSecundary);
   font-size: 20px;
+}
+
+.mensagens{
+  position: absolute;
+  top: 65px;
+  right: 0;
+  padding: 10px;
+
+  background-color: var(--accentPrimary);
+  border: 2px solid var(--overlay);
+  border-radius: 6px;
 }

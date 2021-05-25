@@ -1,7 +1,26 @@
+<?php
+    session_start();
+?>
 <link href="/PWBE/Aula10PHP/icatalogo/icatalogo-parte1/componentes/header/header.css" rel="stylesheet" />
+<?php
+    if(isset($_SESSION['mensagem'])){
+?>
+<div class="mensagens">
+    <?$_SESSION['mensagem']?>
+</div>
+<script lang="javascript">
+    setTimeout(() => {
+        document.querySelector(".mensagens").style.display = "none";
+    }, 4000);
+</script>
+   <?php
+    unset($_SESSION['mensagem']);
+    }
+    ?>
+ 
 <header class="header">
     <figure>
-        <img src="../imgs/logo.png" />
+        <a href="PWBE/Aula10PHP/icatalogo/icatalogo-parte1/produtos"><img src="../imgs/logo.png" /></a>
     </figure>
     <input type="search" placeholder="Pesquisar" />
     <?php

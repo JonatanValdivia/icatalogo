@@ -38,19 +38,19 @@
   border-radius: 6px;
 }
 
-.card-categorias > form > button{
+.card-categorias > img{
   width: 20px;
   border: 0;
   padding: 0;
   box-shadow: none;
 }
 
-.card-categorias > form > button > img {
+.card-categorias > img {
   width: 20px;
   cursor: pointer;
   transition: 0.2s;
 }
 
-.card-categorias > form > button > img:hover {
+.card-categorias > img:hover {
   transform: scale(1.1);
 }
