@@ -62,7 +62,7 @@
                         <img src="../produtos/novo/fotos/<?= $produtos['imagem'] ?>" />
                     </figure>
                     <section>                                                 
-                                                                        <!-- duas casas deimais após a vígula. A vírgula será o separadomr de milhar e o ponto de centavos -->
+                                                                        <!-- duas casas decimais após a vígula. A vírgula será o separadomr de milhar e o ponto de centavos -->
                         <span class="preco">R$: <?= number_format($valorDescontado, 2, ",", ".")?></span>
                         <span class="parcelamento">ou em <em>R$: <?= number_format($valorParcelas, 2, ",", ".")?>x</em></span>
 

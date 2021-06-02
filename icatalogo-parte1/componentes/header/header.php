@@ -1,5 +1,16 @@
 <?php
     session_start();
+    //require("../../database/conexao.php");
+    if(isset($_POST['pesquisar'])){
+        $consulta = $_POST['pesquisar'];
+
+        $sql = "SELECT p.*, c.descricao as categoria FROM tbl_produto p
+        INNER JOIN tbl_categoria c ON p.categoria_id = c.id
+        WHERE p.descricao LIKE '%$consulta%'
+        OR c.descricao LIKE '%$consulta%'
+        ORDER BY p.id DESC";
+        $resultado = mysqli_query($conexao, $sql);
+    }
 ?>
 <link href="/PWBE/Aula10PHP/icatalogo/icatalogo-parte1/componentes/header/header.css" rel="stylesheet" />
 <?php
@@ -22,7 +33,12 @@
     <figure>
         <a href="PWBE/Aula10PHP/icatalogo/icatalogo-parte1/produtos"><img src="../imgs/logo.png" /></a>
     </figure>
-    <input type="search" placeholder="Pesquisar" />
+    <form method="POST" action="">    
+        <input type="search" name="pesquisar" placeholder="Pesquisar" />
+        <button>
+            <img src="../../imgs/lupa-de-pesquisa.svg" alt="">
+        </button>
+    </form>
     <?php
     if (!isset($_SESSION["usuarioId"])) {
     ?>
